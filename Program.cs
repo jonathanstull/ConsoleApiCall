@@ -12,7 +12,8 @@ namespace ApiTest
         {
             var apiCallTask = ApiHelper.ApiCall("a8N9RYvKvHtG8rQCQlv2jCJCqNvEbptD");
             var result = apiCallTask.Result;
-            Console.WriteLine(result);
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(result);
+            Console.WriteLine(jsonResponse["results"]);
         }
     }
 
